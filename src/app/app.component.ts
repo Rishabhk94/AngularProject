@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'The Product Catalogue';
+  products=[
+    {
+        "name":"NodeJS"
+    },
+    {
+        "name":"HTML"
+    },
+    {
+        "name":"CSS"
+    },
+    {
+        "name":"Javascript"
+    }
+]
 }
