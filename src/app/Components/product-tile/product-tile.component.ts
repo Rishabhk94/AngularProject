@@ -9,10 +9,10 @@ export class ProductTileComponent implements OnInit {
   
   constructor() { }
  
-  //@Input() ImgUrl:string="assets/angular-3";
+  @Input() ImgUrl:string="assets/angular-3";
 
   ngOnInit() {
-    //console.log("This is it" + this.ImgUrl)
+    console.log("This is it" + this.ImgUrl)
   }
   
 }
