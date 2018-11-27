@@ -6,13 +6,13 @@ import { Injectable,EventEmitter,Output } from '@angular/core';
 export class SidebarDataService {
 
   constructor() { }
-  public sidBarOpen=false
+  public sideBarOpen=false
   @Output() change: EventEmitter<boolean> = new EventEmitter();
   
 
   ToggleSideBar(){
-    this.sidBarOpen=!this.sidBarOpen
-    this.change.emit(this.sidBarOpen)
+    this.sideBarOpen=!this.sideBarOpen
+    this.change.emit(this.sideBarOpen)
   }
 
 }
