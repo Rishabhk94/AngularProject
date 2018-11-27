@@ -49,7 +49,15 @@ export class SidebarDataService {
   }
 
   SortProducts(){
-    this.products=this.products.sort()
+    this.products.sort(this.Compare)
+  }
+
+  Compare(a,b) {
+    if (a.name < b.name)
+      return -1;
+    if (a.name > b.name)
+      return 1;
+    return 0;
   }
 
 }
