@@ -17,4 +17,8 @@ export class NavbarComponent implements OnInit {
     this.sidebarDataService.ToggleSideBar()
   }
 
+  SortProducts(){
+    this.sidebarDataService.SortProducts()
+  }
+
 }

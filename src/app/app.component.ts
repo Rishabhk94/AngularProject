@@ -24,19 +24,6 @@ export class AppComponent implements OnInit {
 
     
   title = 'The Product Catalogue';
-  products=[
-    {
-        "name":"NodeJS"
-    },
-    {
-        "name":"HTML"
-    },
-    {
-        "name":"CSS"
-    },
-    {
-        "name":"Javascript"
-    }
-]
+  products=this.sidebarDataService.products
 
 }
