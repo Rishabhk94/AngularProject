@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
     constructor(public sidebarDataService:SidebarDataService){
 
     }
-    sideBarState=true;
+    sideBarState=false;
     ngOnInit(){
         this.sidebarDataService.change.subscribe(isOpen => {
             this.sideBarState = isOpen;
