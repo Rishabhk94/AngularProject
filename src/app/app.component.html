@@ -13,4 +13,9 @@
       <app-product-tile class="col"></app-product-tile>
       <app-product-tile class="col"></app-product-tile>
   </div>
+  <div *ngIf="sideBarState" class="sidebar-conatiner">
+      <div class="close-button" (click)=ToggleSideBar()>
+        Close
+      </div>
+  </div>
 </div>

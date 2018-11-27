@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import {SidebarDataService} from './Services/sidebar-data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    constructor(public sidebarDataService:SidebarDataService){
+
+    }
+    sideBarState=true;
+    ngOnInit(){
+        this.sidebarDataService.change.subscribe(isOpen => {
+            this.sideBarState = isOpen;
+          });
+    }
+
+    ToggleSideBar() {
+        this.sidebarDataService.ToggleSideBar()
+    }
+
+
+    
   title = 'The Product Catalogue';
   products=[
     {
@@ -21,4 +38,5 @@ export class AppComponent {
         "name":"Javascript"
     }
 ]
+
 }
