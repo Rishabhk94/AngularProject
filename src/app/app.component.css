@@ -18,3 +18,7 @@
 .close-button:hover{
     color: orange
 }
+.sidebar-content{
+    position: fixed;
+    width: 22rem;
+}
