@@ -5,6 +5,7 @@
     height: 161%;
     width: 22rem;
     background: gray;
+    opacity: 0.7;
     border: 1px solid black;
 }
 .close-button {
