@@ -1,0 +1,5 @@
+<div *ngFor="let row of products; let i = index">
+  <div *ngIf=" i % 3 === 0 " class="row" style="margin-bottom: 2rem">
+    <app-product-tile class="col" ImgUrl={{product.imgpath}} *ngFor="let product of products.slice(i,i+3)"></app-product-tile>
+  </div>
+</div>
