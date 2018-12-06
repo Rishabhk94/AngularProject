@@ -7,23 +7,21 @@ import {SidebarDataService} from './Services/sidebar-data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+    // SidebarDataService injection
     constructor(public sidebarDataService:SidebarDataService){
 
     }
+    
     sideBarState=false;
     ngOnInit(){
+      // check state of sidebar on initializing component
         this.sidebarDataService.change.subscribe(isOpen => {
             this.sideBarState = isOpen;
           });
     }
 
+    // to toggle state of sidebar via service
     ToggleSideBar() {
         this.sidebarDataService.ToggleSideBar()
     }
-
-
-    
-  title = 'The Product Catalogue';
-  products=this.sidebarDataService.products
-
 }
