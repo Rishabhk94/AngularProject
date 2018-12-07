@@ -1,20 +1,20 @@
 <div class="nav-container">
     <div class="nav-button" routerLink="/home" routerLinkActive="active">
-        Home
+        <div>Home</div>
     </div>
     <div class="nav-button" (click)="OpenSideBar()">
-        Click to open SideBar
+        <div>Click to open SideBar</div>
     </div>
     <div *ngIf="!productSorted; else elseBlock" class="nav-button" (click)="SortProducts()">
-        Click to Sort
+        <div>Click to Sort</div>
     </div>
     <ng-template #elseBlock>
         <div class="nav-button" (click)="SortProducts()">
-            Click to UnSort
+            <div>Click to UnSort</div>
         </div>
     </ng-template>
     <div class="nav-button" routerLink="/new-tech" routerLinkActive="active">
-        Add New Tech
+        <div>Add New Tech</div>
     </div>
 </div>
 

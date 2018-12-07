@@ -8,13 +8,12 @@
     z-index: 1;
 }
 .nav-button{
-    width: 12rem;
     color: white;
-    padding-top: 1rem;
-    padding-left: 1rem;
+    font-weight: bold;
+    padding: 1rem;
     cursor: pointer;
     display: inline-block;
 }
 .nav-button:hover{
-    color: orange;
+    color: darkblue;
 }
