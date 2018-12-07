@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductDataService } from '../../Services/product-data.service';
+import { Products } from '../../interfaces/products';
 
 @Component({
   selector: 'app-home-page',
@@ -27,14 +28,14 @@ export class HomePageComponent implements OnInit {
   }
 
   // get data via service
-  getProducts() {
+  getProducts():void{
     this.productDataService.GetProducts()
     .subscribe( 
       data => this.products = data
     )
   }
 
-  SortProducts(){
+  SortProducts():void{
     // sort products using the compare function mentioned in service
     this.products.sort(this.productDataService.Compare)
   }
