@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {SidebarDataService} from '../../../Services/sidebar-data.service'
+import { SidebarDataService } from '../../../Services/sidebar-data.service';
+import { ProductDataService } from '../../../Services/product-data.service';
+import { HomePageComponent } from '../../../Components/home-page/home-page.component';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +10,8 @@ import {SidebarDataService} from '../../../Services/sidebar-data.service'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private sidebarDataService:SidebarDataService) { }
-
+  constructor(private sidebarDataService:SidebarDataService,
+              private productDataService:ProductDataService) { }
   ngOnInit() {
   }
 
@@ -18,7 +20,7 @@ export class NavbarComponent implements OnInit {
   }
 
   SortProducts(){
-    this.sidebarDataService.SortProducts()
+    this.productDataService.SortProducts()
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarDataService } from '../../Services/sidebar-data.service';
+import { ProductDataService } from '../../Services/product-data.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,11 +8,30 @@ import { SidebarDataService } from '../../Services/sidebar-data.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor( private sidebarDataService:SidebarDataService) { }
+  constructor(private productDataService:ProductDataService) { }
   products;
 
   ngOnInit() {
-    this.products=this.sidebarDataService.products
+    // call getProducts on intialization
+    this.getProducts()
+    this.productDataService.change.subscribe((SortProducts)=>{
+      if (SortProducts==true){
+        this.SortProducts()
+        console.log("sorted!!")
+      }
+    })
+  }
+
+  // get data via service
+  getProducts() {
+    this.productDataService.GetProducts()
+    .subscribe( 
+      data => this.products = data
+    )
+  }
+
+  SortProducts(){
+    this.products.sort(this.productDataService.Compare)
   }
 
 }

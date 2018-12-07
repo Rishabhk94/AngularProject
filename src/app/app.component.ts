@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {SidebarDataService} from './Services/sidebar-data.service';
+import { SidebarDataService } from './Services/sidebar-data.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
     constructor(public sidebarDataService:SidebarDataService){
 
     }
-    
+
     sideBarState=false;
     ngOnInit(){
       // check state of sidebar on initializing component

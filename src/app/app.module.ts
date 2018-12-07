@@ -7,6 +7,7 @@ import { ProductTileComponent } from './Components/product-tile/product-tile.com
 import { NewTechPageComponent } from './Components/new-tech-page/new-tech-page.component';
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes=[
   // default route set to home
@@ -27,6 +28,7 @@ const appRoutes:Routes=[
     RouterModule.forRoot(
       appRoutes
     ),
+    HttpClientModule,
     BrowserModule
   ],
   providers: [],

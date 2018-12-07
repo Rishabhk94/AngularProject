@@ -1,26 +1,33 @@
 [
     {
         "id":"0001",
-        "name":"NodeJS"
+        "name":"NodeJS",
+        "imgpath":"assets/nodejs-new-pantone-black.png",
+        "url":"https://nodejs.org/en/"
     },
     {
         "id":"0002",
-        "name":"JavaScript"
+        "name":"JavaScript",
+        "imgpath":"assets/JavaScript-logo.png"
     },
     {
         "id":"0003",
-        "name":"Sass"
+        "name":"Sass",
+        "imgpath":"assets/logo-b6e1ef6e.svg"
     },
     {
         "id":"0004",
-        "name":"Angular"
+        "name":"Angular",
+        "imgpath":"assets/angular-3.svg"
     },
     {
         "id":"0005",
-        "name":"ReactJS"
+        "name":"ReactJS",
+        "imgpath":"assets/2000px-React-icon.svg.png"
     },
     {
         "id":"0006",
-        "name":"Bootstrap"
+        "name":"Bootstrap",
+        "imgpath":"assets/bootstrap-logo.png"
     }
 ]
