@@ -14,10 +14,14 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
     // call getProducts on intialization
     this.getProducts()
-    this.productDataService.change.subscribe((SortProducts)=>{
-      if (SortProducts==true){
+    this.productDataService.change.subscribe((productSorted)=>{
+      if (productSorted==true){
+        // call sort method
         this.SortProducts()
-        console.log("sorted!!")
+      }
+      else{
+        // restore original order
+        this.getProducts()
       }
     })
   }
@@ -31,6 +35,7 @@ export class HomePageComponent implements OnInit {
   }
 
   SortProducts(){
+    // sort products using the compare function mentioned in service
     this.products.sort(this.productDataService.Compare)
   }
 

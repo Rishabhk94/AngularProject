@@ -5,9 +5,14 @@
     <div class="nav-button" (click)="OpenSideBar()">
         Click to open SideBar
     </div>
-    <div class="nav-button" (click)="SortProducts()">
+    <div *ngIf="!productSorted; else elseBlock" class="nav-button" (click)="SortProducts()">
         Click to Sort
     </div>
+    <ng-template #elseBlock>
+        <div class="nav-button" (click)="SortProducts()">
+            Click to UnSort
+        </div>
+    </ng-template>
     <div class="nav-button" routerLink="/new-tech" routerLinkActive="active">
         Add New Tech
     </div>

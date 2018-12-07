@@ -10,15 +10,23 @@ import { HomePageComponent } from '../../../Components/home-page/home-page.compo
 })
 export class NavbarComponent implements OnInit {
 
+  productSorted=false;
+
   constructor(private sidebarDataService:SidebarDataService,
               private productDataService:ProductDataService) { }
+
   ngOnInit() {
+    this.productDataService.change.subscribe((productSorted)=>{
+      this.productSorted=productSorted
+    })
   }
 
+  //To toggle sidebar via service
   OpenSideBar() {
     this.sidebarDataService.ToggleSideBar()
   }
 
+  //To sort data using service
   SortProducts(){
     this.productDataService.SortProducts()
   }
