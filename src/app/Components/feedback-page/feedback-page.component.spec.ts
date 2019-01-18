@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewTechPageComponent } from './new-tech-page.component';
+import { NewTechPageComponent } from './feedback-page.component';
 
 describe('NewTechPageComponent', () => {
   let component: NewTechPageComponent;
