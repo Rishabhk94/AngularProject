@@ -45,7 +45,6 @@ export class NavbarComponent implements OnInit {
   CheckRoute():void{
     if (this.router.url=='/home'){
       this.displaySort=true
-      console.log('haha')
     }
     else{
       this.displaySort=false
