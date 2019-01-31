@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarDataService } from '../../../Services/sidebar-data.service';
 import { ProductDataService } from '../../../Services/product-data.service';
-import { HomePageComponent } from '../../../Components/home-page/home-page.component';
+import { Router,Event,NavigationEnd } from '@angular/router'
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +10,20 @@ import { HomePageComponent } from '../../../Components/home-page/home-page.compo
 })
 export class NavbarComponent implements OnInit {
 
-  productSorted=false;
+  private productSorted:boolean=false;
+  private displaySort:boolean;
 
   constructor(private sidebarDataService:SidebarDataService,
-              private productDataService:ProductDataService) { }
+              private productDataService:ProductDataService,
+              private router:Router) { 
+
+    this.router.events.subscribe((event:Event)=>{
+      if (event instanceof NavigationEnd) {
+        // check route and update displaySort variable 
+        this.CheckRoute()
+      }
+    })
+  }
 
   ngOnInit() {
     this.productDataService.change.subscribe((productSorted)=>{
@@ -27,8 +37,19 @@ export class NavbarComponent implements OnInit {
   }
 
   //To sort data using service
-  SortProducts(){
+  SortProducts():void{
     this.productDataService.SortProducts()
+  }
+  
+  //To check route
+  CheckRoute():void{
+    if (this.router.url=='/home'){
+      this.displaySort=true
+      console.log('haha')
+    }
+    else{
+      this.displaySort=false
+    }
   }
 
 }

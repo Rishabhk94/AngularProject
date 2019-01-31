@@ -8,14 +8,12 @@
     <div class="nav-button">
         <div>Add a new Tech</div>
     </div>
-    <div *ngIf="!productSorted; else elseBlock" class="nav-button" (click)="SortProducts()">
+    <div *ngIf="!productSorted && displaySort==true" class="nav-button" (click)="SortProducts()">
         <div>Click to Sort</div>
     </div>
-    <ng-template #elseBlock>
-        <div class="nav-button" (click)="SortProducts()">
-            <div>Click to UnSort</div>
-        </div>
-    </ng-template>
+    <div *ngIf="productSorted && displaySort==true" class="nav-button" (click)="SortProducts()">
+        <div>Click to UnSort</div>
+    </div>
     <div class="nav-button" routerLink="/feedback" routerLinkActive="active">
         <div>Feedback</div>
     </div>

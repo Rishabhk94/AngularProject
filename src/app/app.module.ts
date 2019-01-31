@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule, ReducerManager } from '@ngrx/store';
 import { reducers } from "./store/reducers";
+import { AddTechModalComponent } from './Components/add-tech-modal/add-tech-modal.component';
 
 const appRoutes:Routes=[
   // default route set to home page
@@ -24,7 +25,8 @@ const appRoutes:Routes=[
     NavbarComponent,
     ProductTileComponent,
     NewTechPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    AddTechModalComponent
   ],
   imports: [
     RouterModule.forRoot(
