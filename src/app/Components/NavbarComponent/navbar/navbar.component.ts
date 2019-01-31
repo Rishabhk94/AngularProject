@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
 
   //To toggle sidebar via service
   OpenSideBar() {
-    this.sidebarDataService.ToggleSideBar()
+    //this.sidebarDataService.ToggleSideBar()
   }
 
   //To sort data using service

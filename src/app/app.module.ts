@@ -8,9 +8,11 @@ import { NewTechPageComponent } from './Components/feedback-page/feedback-page.c
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule, ReducerManager } from '@ngrx/store';
+import { reducers } from "./store/reducers";
 
 const appRoutes:Routes=[
-  // default route set to home
+  // default route set to home page
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: "home",component: HomePageComponent},
   { path: "feedback",component: NewTechPageComponent}
@@ -29,6 +31,7 @@ const appRoutes:Routes=[
       appRoutes
     ),
     HttpClientModule,
+    StoreModule.forRoot(reducers,{}),
     BrowserModule
   ],
   providers: [],
