@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarDataService } from '../../../Services/sidebar-data.service';
 import { ProductDataService } from '../../../Services/product-data.service';
 import { Router,Event,NavigationEnd } from '@angular/router'
+import { OPEN_ADD_TECH } from '../../../store/actions/appActions';
 
 @Component({
   selector: 'app-navbar',
@@ -34,6 +35,13 @@ export class NavbarComponent implements OnInit {
   //To toggle sidebar via service
   OpenSideBar() {
     //this.sidebarDataService.ToggleSideBar()
+  }
+
+  OpenModal(){
+    console.log("haha")
+    this.sidebarDataService.updateState({
+      action:OPEN_ADD_TECH
+    })
   }
 
   //To sort data using service

@@ -19,4 +19,10 @@ export class SidebarDataService {
     return this.store.select('appReducer')
   }
 
+  updateState({action}) {
+    return this.store.dispatch({
+      type:action
+    })
+  }
+
 }

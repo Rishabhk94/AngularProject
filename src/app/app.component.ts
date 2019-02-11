@@ -13,13 +13,14 @@ export class AppComponent implements OnInit {
     }
 
     sideBarState=false;
+    addTechModal:boolean=false
     ngOnInit(){
       // check state of sidebar on initializing component
         //this.sidebarDataService.change.subscribe(isOpen => {
           //  this.sideBarState = isOpen;
           //});
           this.sidebarDataService.getState().subscribe(state=>{
-            console.log(state)
+            this.addTechModal=state.addTechOpen
           })
     }
 

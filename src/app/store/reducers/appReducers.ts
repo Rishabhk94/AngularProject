@@ -1,11 +1,13 @@
-import { OPEN_SIDEBAR,CLOSE_SIDEBAR } from '../actions/appActions';
+import { OPEN_SIDEBAR,CLOSE_SIDEBAR, OPEN_ADD_TECH, CLOSE_ADD_TECH } from '../actions/appActions';
 
 interface appReducerState {
-    sideBarOpen: boolean
+    sideBarOpen: boolean,
+    addTechOpen: boolean
 }
 
 const initialState:appReducerState = {
-    sideBarOpen: false
+    sideBarOpen: false,
+    addTechOpen: false
 }
 
 export function reducer(state = initialState,action):appReducerState{
@@ -19,6 +21,16 @@ export function reducer(state = initialState,action):appReducerState{
         return {
             ...state,
             sideBarOpen: false
+        }
+        case OPEN_ADD_TECH:
+        return {
+            ...state,
+            addTechOpen: true
+        }
+        case CLOSE_ADD_TECH:
+        return {
+            ...state,
+            addTechOpen: false
         }
     }
     return state;

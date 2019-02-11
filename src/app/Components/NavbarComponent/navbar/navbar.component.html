@@ -5,7 +5,7 @@
     <div class="nav-button" routerLink="/home" routerLinkActive="active">
         <div>Home</div>
     </div>
-    <div class="nav-button">
+    <div class="nav-button" (click)="OpenModal()">
         <div>Add a new Tech</div>
     </div>
     <div *ngIf="!productSorted && displaySort==true" class="nav-button" (click)="SortProducts()">
