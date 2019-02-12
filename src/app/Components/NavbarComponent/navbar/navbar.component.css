@@ -17,3 +17,28 @@
 .nav-button:hover{
     color: darkblue;
 }
+
+.login-button{
+    float: right
+}
+
+.menu-icon{
+    width: 2rem;
+    height: 1.5rem;
+}
+
+.menu-icon-container{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    .nav-button{
+        display: none;
+    }
+    .login-button{
+        display: inline-block;
+    }
+    .menu-icon-container{
+        display: inline-block;
+    }
+}
